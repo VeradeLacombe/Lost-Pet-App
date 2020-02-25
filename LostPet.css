@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@media (max-width: 400px){
+}
+body {
+	background-color:#00163C;
+	color:white;
+}
+h2 {
+	padding-bottom: 15px;
+}
+form {
+	padding-bottom: 15px;
+}
+.main-container {
+	text-align: center;
+}
+
+.button {
+		border: none;
+	}
+	
