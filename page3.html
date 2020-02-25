@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page3</title>
+<link href="LostPet.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<form action="action_page.php">
+		<div class="container">
+			<h2>Register found pet</h2>
+			<p>Please fill in this form,<br>so that someone can find their pet back.</p>
+			<br>
+		
+			<label><b>Kind of Pet</b></label><br>
+			<select id="Kind" name="Kind of Pet">
+				<option value="Bird">Bird</option>
+				<option value="Cat">Cat</option>
+				<option value="Dog">Dog</option>
+				<option value="Guinea Pig">Guinea Pig</option>
+				<option value="Rabbit">Rabbit</option>
+				<option value="Turtle">Turtle</option>
+				<option value="Others">Others</option>
+			</select><br>
+			
+			<label><b>Appearance</b></label><br>
+			<select id="Appearance" name="Appearance">
+				<option value="something">Option1</option>
+				<option value="something">Option2</option>
+				<option value="something">Option3</option>
+				<option value="something">Option4</option>
+				<option value="something">Option5</option>
+			</select><br>
+			
+			<label><b>Date</b></label><br>
+			<input type="date" placeholder="dd.mm.yyyy"><br>
+			
+			<label><b>Found at</b></label><br>
+			<input type="text" placeholder="Enter the location here" name="Location"><br>
+			
+			<label><b>Picture</b></label><br>
+			<input type="file" id="Picture" name="Picture" accept="image/*"><br>
+			
+			
+			<label><b>Comments</b></label><br>
+			<textarea id="Description" name="Description" palceholder="Please describe your pet..." style="height:200px"></textarea>
+			<br>
+			
+			<label><b>Your Email</b></label><br>
+			<input type="text" placeholder="Enter Email" name="email" required><br>
+			
+			<input type="checkbox" name="notifications" required>
+			<label><b>Turn on notifications</b></label><br>
+			
+			
+			
+			
+			
+			<button type="submit" class="button">Register Lost Pet</button>
+		</div>
+	
+	</form>
+	
+</body>
+</html>
