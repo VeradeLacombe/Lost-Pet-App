@@ -1,6 +1,12 @@
 @charset "UTF-8";
+*{box-sizing: border-box}
 
 @media (max-width: 400px){
+}
+
+/*Add padding to containers*/
+.container {
+	padding: 16px; 
 }
 body {
 	background-color:#00163C;
@@ -11,11 +17,11 @@ h2 {
 }
 form {
 	padding-bottom: 15px;
+	
 }
-.main-container {
+.container {
 	text-align: center;
 }
-
 .button {
 		border: none;
 	}
