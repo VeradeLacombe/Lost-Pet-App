@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	background-color: #ffd11a;
+	background-color: #393F4B;
 }
 
 #logoContainer {
@@ -31,9 +31,11 @@ button {
 	height: 50px;
 	border-radius: 12px;
 	border: none;
-	background-color: black; 
-	color: white;
-	font-family: "Trebuchet MS", Helvetica, sans-serif; 
+	background-color: #CCDB40 ;
+	color: #393f4B;
+	font-family: neuzeit-grotesk, sans-serif;
+	font-style: normal;
+	font-weight: 300; 
 	font-size: 16px;
 }
 
