@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background: #393f4B;
+	
+} 
+	
+#h1 { 
+text-align: center; 
+color: #CCDB40;
+font-family: neuzeit-grotesk, sans-serif;
+font-style: normal;
+font-weight: 300; 
+} 
