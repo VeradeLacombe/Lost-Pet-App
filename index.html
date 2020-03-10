@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page3</title>
+
+<link href="LostPet.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="container">
+		<h2>Register found pet</h2>
+			<p>Please fill in this form,<br>so that someone can find their pet back.</p>
+			<br>
+		
+	<form>
+	  <div class="form-group">
+		<label for="Location">Found at</label><br>
+		<input type="email" class="form-control form-control-lg" id="location" placeholder="Insert location here">
+	  </div><br>
+		
+		  <div class="form-group">
+		<label for="date">Date</label><br>
+		<input type="date" placeholder="dd.mm.yyyy" class="form-control form-control-lg" id="date">
+	  </div><br>
+		
+		
+	<div class="form-group">
+		<label>Kind of Pet</label><br>
+			<select id="Kind" name="Kind of Pet">
+				<option value="Bird">Bird</option>
+				<option value="Cat">Cat</option>
+				<option value="Dog">Dog</option>
+				<option value="Guinea Pig">Guinea Pig</option>
+				<option value="Rabbit">Rabbit</option>
+				<option value="Turtle">Turtle</option>
+				<option value="Others">Others</option>
+			</select>
+ 	 </div><br>
+		
+		 <div class="form-group">
+			<label>Picture</label><br>
+			<input type="file" id="Picture" name="Picture" accept="image/*"><br>
+		</div><br>
+		
+		<div class="form-group">
+		<label>Comments</label><br>
+			<textarea id="Description" name="Description" placeholder="Please describe your pet..." style="height:100px"></textarea>
+		</div><br>
+			
+		
+		 <div class="form-group">
+		<label for="date">Email</label><br>
+		<input type="email" placeholder="Enter your email here" class="form-control form-control-lg" id="email">
+		<small id="emailHelp" class="form-text text-muted"><br>We'll never share your email with anyone else.</small>
+	  </div><br>
+		
+	  <div class="form-group2 form-check">
+		<input type="checkbox" class="form-check-input" id="exampleCheck1">
+		<label class="form-check-label form-control-lg" for="exampleCheck1">Turn notifications on</label>
+	  </div><br>
+		
+		
+	  <button type="button" class="btn btn-outline-success">Submit</button>
+		
+	</form>
+	
+	
+
+		
+		
+		
+</div>
+	
+</body>
+</html>

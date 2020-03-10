@@ -4,11 +4,9 @@ body {
 	display: flex;
 	justify-content: center;
 }
-
 p {
 	font-size: 12px;
 }
-
 .container {
 	width: 60%;
 	padding: 16px; 
@@ -18,7 +16,7 @@ p {
 	justify-content: center;
 }
 
-#email, #date, #Picture, #location, #Kind, #Description{
+#email, #date, #Picture, #location, #name, #Kind, #Description{
 	width: 80%;
 	background-color: #CCCCCC;
 	border: none;
@@ -38,7 +36,6 @@ h2 {
 label {
 	text-transform:uppercase;
 	}
-
 .btn {
 	background-color: #CCCCCC;
 	color: black;
@@ -52,3 +49,4 @@ label {
 .btn:hover{
 	opacity: 1;
 }
+
