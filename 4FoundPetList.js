@@ -46,11 +46,11 @@ class Pet {
 }
 
 const lostPets = [
-	new Pet("Pepper_cat.jpeg", "Pepper", "Cat", "A small cat with grey hair.", "email@email"),
-	new Pet("Bella_dog.webp", "Bella", "Dog", "It is a Golden Retriever. She has white fur.", "email@email"),
-	new Pet("Lucky_cat.jpeg", "Lucky", "Cat", "A small cat with brown hair.", "email@email"),
-	new Pet("Rebbel_cat.jpeg", "Cookies", "Cat", "A small cat with black hair and white socks and chest.", "email@email")
-]
+	new Pet("Labradoodle.jpg", "Coco", "Dog", "Choclate brown dog, labradoodle, she has a black collar", "email@email"),
+	new Pet("Husky.jpg", "Unknown", "Dog", "It's a huskt, black and white fur, blue eyes, he/she has a collar without a name", "email@email"),
+	new Pet("Cat.jpg", "George", "Cat", "The cat has a red collar. It has redish fur and is a bit chubby", "email@email"),
+	new Pet("Cat_1.jpg", "Unknown", "Cat", "A small cat brown and black stripes. He was waiting in front of my door", "email@email")
+	]
 
 var nameFilter = "";
 var typesFilter = [];
