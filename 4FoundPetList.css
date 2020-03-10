@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+.nameContainer, .typeContainer, .descriptionContainer {
+	margin-left: 15px;
+    display: block;
+    margin: 2px 0 0 0;
+	font-family: neuzeit-grotesk, sans-serif;
+}
+
+.nameContainer {
+	color: #393F4B;
+	font-weight: bold;
+	font-size: 25px;
+	margin-bottom: 2%;
+}
+
+.typeContainer{ 
+	font-size: 18px;
+	color: #393F4B;
+	margin-bottom: 2%;
+}
+
+.descriptionContainer { 
+	font-size: 15px;
+	color: #393F4B;
+	
+}
+
+.image {
+	max-height: 100%;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;	
+}
+
+.poster {
+	margin-top: 50px;
+	overflow: hidden;
+	background-color: #CCDB40;
+	
+}
+
+.imageContainer {
+	width: 20vw;
+	height: 20vh;
+	position: relative;      
+	margin-right: 15px;
+	margin-left: 2px; 
+	margin-bottom: 2px;
+	margin-top: 2px;
+	float: left;
+	background-color: rgba(0,0,0,0.20);
+}
+
+#filterPopup {
+	display: none;
+	position: absolute;
+	background-color: white;
+	padding: 10px;
+	margin-top: 5px;
+	z-index: 9;
+	font-family: neuzeit-grotesk, sans-serif;
+	color: #393F4B; 
+}
