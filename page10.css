@@ -1,11 +1,23 @@
 @charset "UTF-8";
-/* CSS Document */
+
 body {
 	display: flex;
 	justify-content: center;
 }
+
 p {
 	font-size: 12px;
+}
+body {
+	background-color:#00163C;
+	color: white;
+	margin: 0;
+
+}
+h2 {
+	text-transform: uppercase;
+	font-size: 20px;
+	text-align: center;
 }
 .container {
 	width: 60%;
@@ -13,31 +25,21 @@ p {
 	font-family: Avenir, Arial;
 	display: flex; 
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+	align-items: flex-end;
 }
-
-#email, #date, #Picture, #location, #name, #Kind, #Description{
+.image {
+	justify-content: center;
+	
+}
+h4 {
+	text-transform: uppercase;
+}
+.list, .introduction, .image, .btn {
 	width: 80%;
-	background-color: #CCCCCC;
-	border: none;
-	color: #00163C;
 	padding: 8px;
 }
-
-body {
-	background-color:#00163C;
-	color:white;
-}
-h2 {
-	text-transform: uppercase;
-	font-size: 20px;
-}
-
-label {
-	text-transform:uppercase;
-	}
 .btn {
-	background-color: #CCCCCC;
 	color: black;
 	padding: 16px 20px;
 	margin: 8px 0;
@@ -49,5 +51,4 @@ label {
 .btn:hover{
 	opacity: 1;
 }
-
 
