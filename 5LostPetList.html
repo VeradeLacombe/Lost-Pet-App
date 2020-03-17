@@ -5,38 +5,36 @@
 	<link href="5LostPetList.css" rel="stylesheet" type="text/css">
 	<link href="main.css" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="5LostPetList.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<meta charset="utf-8">
+	 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <body>
-	<div data-role="page">
-		<script src="5LostPetList.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		
-		<button class="home" onClick="window.location.href ='index.html';"><i class="fa fa-home"></i></button>
-
-		<h1 id="h1">Lost Pet List</h1>
-
-		<i class="fa fa-filter fa_custom fa-2x" onClick="togglePopup()"></i>
-
-		<div id="filterPopup">
-			<input type="checkbox" class="filter" id="cat" value="Cat">
-			<label for="cat">Cat</label><br>
-			<input type="checkbox" class="filter" id="dog" value="Dog">
-			<label for="dog">Dog</label><br>
-			<input type="checkbox" class="filter" id="bird" value="Bird">
-			<label for="bird">Bird</label><br>
-			<input type="checkbox" class="filter" id="guinea pig" value="Guinea pig">
-			<label for="guinea pig">Guinea pig</label><br>
-		</div>
-
-		<input id="searchBar" type="text">
-
-		<div id="Google"><img src="google-maps-icon.png" alt="maps-icon" height="40"></div>
-
-		<div id="lostPetsContainer"></div>
+	
+	<button class="home" onClick="window.location.href ='index.html';"><i class="fa fa-home"></i></button>
+	
+	<h1 id="h1">Lost Pet List</h1>
+	
+	<i class="fa fa-filter fa_custom fa-2x" onClick="togglePopup()"></i>
+	
+	<div id="filterPopup">
+		<input type="checkbox" class="filter" id="cat" value="Cat">
+		<label for="cat">Cat</label><br>
+		<input type="checkbox" class="filter" id="dog" value="Dog">
+		<label for="dog">Dog</label><br>
+		<input type="checkbox" class="filter" id="bird" value="Bird">
+		<label for="bird">Bird</label><br>
+		<input type="checkbox" class="filter" id="guinea pig" value="Guinea pig">
+		<label for="guinea pig">Guinea pig</label><br>
 	</div>
+	
+	<input id="searchBar" type="text">
+	
+	<div id="Google"><img src="google-maps-icon.png" alt="maps-icon" height="40"></div>
+	
+	<div id="lostPetsContainer"></div>
 </body>
 </html>
