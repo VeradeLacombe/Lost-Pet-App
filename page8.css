@@ -20,7 +20,7 @@ p {
 	
 }
 
-#email, #date, #Picture, #location, #name, #Kind, #Description{
+#email, #date, #Picture, #location, #name, #Kind, #Description, #Size, #Fur{
 	width: 80%;
 	background-color: #CCCCCC;
 	border: none;

@@ -21,7 +21,7 @@ p {
 	justify-content: center;
 }
 
-#email, #date, #Picture, #location, #Kind, #Description, #Fur{
+#email, #date, #Picture, #location, #Kind, #Description, #Fur, #Size{
 	width: 80%;
 	background-color: #CCCCCC;
 	border: none;
