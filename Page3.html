@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page3</title>
+
+<link href="LostPet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+</head>
+
+<body>
+	<button class="home" onClick="window.location.href ='index.html';"><i class="fa fa-home"></i></button>
+	
+<div class="container">
+		<h2>Register found pet</h2>
+			<p>Please fill in this form,<br>so that someone can find their pet back.</p>
+			<br>
+	<form action="first.php" method="get">
+	  <div class="form-group">
+		<label for="Location">Found at</label><br>
+		<input type="location" class="form-control form-control-lg" id="location" placeholder="Insert location here">
+	  </div><br>
+		
+		  <div class="form-group">
+		<label for="date">Date</label><br>
+		<input type="date" placeholder="dd.mm.yyyy" class="form-control form-control-lg" id="date">
+	  </div><br>
+		
+		
+	<div class="form-group">
+		<label>Kind of Pet</label><br>
+		<select id="Kind" name="Kind">
+			<option value="Bird">Bird</option>
+			<option value="Cat">Cat</option>
+			<option value="Dog">Dog</option>
+			<option value="Guinea Pig">Guinea Pig</option>
+			<option value="Rabbit">Rabbit</option>
+			<option value="Turtle">Turtle</option>
+			<option value="Others">Others</option>
+		</select>
+		
+	</div><br>
+		
+		<div class="form-group">
+		<label>Size</label><br>
+			<select id="Size" name="Size">
+				<option value="Small">Small</option>
+				<option value="Medium">Medium</option>
+				<option value="Large">Large</option>
+			</select>
+ 	 </div><br>
+		
+		<div class="form-group">
+		<label>Color</label><br>
+			<select id="Fur" name="Fur">
+				<option value="Small">Light brown</option>
+				<option value="Medium">Brown</option>
+				<option value="Large">Dark brown</option>
+				<option value="Small">Black</option>
+				<option value="Medium">Grey</option>
+				<option value="Medium">Green</option>
+				<option value="Medium">Yellow</option>
+				<option value="Medium">Red</option>
+				<option value="Large">White</option>
+				<option value="Medium">Multiple</option>
+				<option value="Medium">Others</option>
+			</select>
+ 	 </div><br>
+		
+		 <div class="form-group">
+			<label>Picture</label><br>
+			<input type="file" id="Picture" name="Picture" accept="image/*"><br>
+		</div><br>
+		
+		
+		<div class="form-group">
+		<label>Comments</label><br>
+		<textarea id="Description" name="Description" placeholder="Please describe your pet..." style="height:100px"></textarea>
+		</div><br>
+			
+		
+		 <div class="form-group">
+		<label for="date">Email</label><br>
+		<input type="email" placeholder="Enter your email here" class="form-control form-control-lg" id="email">
+	  </div><br>
+		
+	  <div class="form-group2 form-check">
+		<input type="checkbox" class="form-check-input" id="exampleCheck1">
+		<label class="form-check-label form-control-lg" for="exampleCheck1">Turn notifications on</label>
+	  </div><br>
+		
+		
+		<button type="button" class="btn btn-outline-success">Submit</button>
+		
+	</form>
+	
+	
+
+		
+		
+		
+</div>
+	
+</body>
+</html>
