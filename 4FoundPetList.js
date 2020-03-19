@@ -61,7 +61,7 @@ function updatePosters() {
 	for (var pet of lostPets) {
 		
 		// Check if pet has the correct name
-		if (!(new RegExp(nameFilter)).test(pet.name)) continue;
+		if (!(new RegExp(nameFilter.toLowerCase())).test(pet.name.toLowerCase())) continue;
 		
 		// Check if pet is of the correct type
 		if (typesFilter.length != 0 && !typesFilter.some(function(type) { return pet.type == type; })) continue;
