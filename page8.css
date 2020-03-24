@@ -11,8 +11,8 @@ p {
 	font-size: 12px;
 }
 .container {
-	width: 60%;
-	padding: 16px; 
+	width: 100%;
+	padding: 25px; 
 	font-family: neuzeit-grotesk, sans-serif;
 	display: flex; 
 	flex-direction: column;
@@ -20,7 +20,7 @@ p {
 	
 }
 
-#email, #date, #Picture, #location, #name, #Kind, #Description, #Size, #Fur{
+.CustomInput, #email, #date, #Picture, #location, #name, #Kind, #Description, #Pet {
 	width: 80%;
 	background-color: #CCCCCC;
 	border: none;
@@ -30,6 +30,14 @@ p {
 	font-style: normal;
 	font-weight: 300; 
 	font-size: 12px;
+}
+
+.PetKindDependent {
+	display: none;
+}
+
+select {
+	height: 40px;
 }
 
 body {
@@ -55,6 +63,7 @@ label {
 	}
 
 .btn {
+	text-decoration: none;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -73,6 +82,7 @@ label {
 .btn:hover{
 	opacity: 1;
 	background-color: #CCDB40;
+	text-decoration: none;
 }
 
 .home {

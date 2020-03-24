@@ -6,7 +6,17 @@
 
 <link href="LostPet.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript"> 
+        function Optionselection(select) {
+			var chosen = select.options[select.selectedIndex]; 
+			var chosenId = "#" + chosen.value;
+			$(".PetKindDependent").not(chosenId).hide();
+			$(chosenId).show();
+        }
+    </script>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 
 <body>
@@ -14,7 +24,7 @@
 	
 <div class="container">
 		<h2>Register found pet</h2>
-			<p>Please fill in this form,<br>so that someone can find their pet back.</p>
+			<p>Please fill in the details as accurate as possible in order for owners to find their lost pets.</p>
 			<br>
 	<form action="first.php" method="get">
 	  <div class="form-group">
@@ -30,43 +40,100 @@
 		
 	<div class="form-group">
 		<label>Kind of Pet</label><br>
-		<select id="Kind" name="Kind">
-			<option value="Bird">Bird</option>
-			<option value="Cat">Cat</option>
-			<option value="Dog">Dog</option>
-			<option value="Guinea Pig">Guinea Pig</option>
-			<option value="Rabbit">Rabbit</option>
-			<option value="Turtle">Turtle</option>
-			<option value="Others">Others</option>
-		</select>
+		<select id="Kind" name="Kind" onchange="Optionselection (this)">
+		<option value="none">---</option>
+			<option value="Bird" label="🦜 Bird">Bird</option>
+			<option value="Cat" label="🐈 Cat">Cat</option>
+			<option value="Dog" label="🦮 Dog">Dog</option>
+			<option value="Rabbit" label="🐇 Rabbit">Rabbit</option>
+			<option value="Turtle" label="🐢 Turtle">Turtle</option>
+			<option value="Others" label="🐾 Others">Others</option>
+			</select>
 		
 	</div><br>
 		
-		<div class="form-group">
-		<label>Size</label><br>
-			<select id="Size" name="Size">
-				<option value="Small">Small</option>
-				<option value="Medium">Medium</option>
-				<option value="Large">Large</option>
-			</select>
- 	 </div><br>
-		
-		<div class="form-group">
-		<label>Color</label><br>
-			<select id="Fur" name="Fur">
-				<option value="Small">Light brown</option>
-				<option value="Medium">Brown</option>
-				<option value="Large">Dark brown</option>
-				<option value="Small">Black</option>
-				<option value="Medium">Grey</option>
-				<option value="Medium">Green</option>
-				<option value="Medium">Yellow</option>
-				<option value="Medium">Red</option>
-				<option value="Large">White</option>
+		<div class="PetKindDependent" id="Bird">
+			
+	<div class="form-group">
+		<label>Feathers</label><br>
+			<select id="Bird_Feathers" name="Feathers" class="CustomInput">
+				<option value="Black">Black</option>
+				<option value="Blue">Blue</option>
+				<option value="Brown">Brown</option>
+				<option value="Green">Green</option>
+				<option value="Grey">Grey</option>
+				<option value="Red">Red</option>
+				<option value="Yellow">Yellow</option>
+				<option value="White">White</option>
 				<option value="Medium">Multiple</option>
 				<option value="Medium">Others</option>
 			</select>
  	 </div><br>
+	</div>
+		
+			<div class="PetKindDependent" id="Cat">
+			
+	<div class="form-group">
+		<label>Fur</label><br>
+			<select id="Cat_Fur" name="Fur" class="CustomInput">
+				<option value="Black">Black</option>
+				<option value="Light brown">Light brown</option>
+				<option value="Brown">Brown</option>
+				<option value="Dark brown">Dark brown</option>
+				<option value="Grey">Grey</option>
+				<option value="Red">Red</option>
+				<option value="White">White</option>
+				<option value="Multiple">Multiple</option>
+				<option value="Others">Others</option>
+			</select>
+ 	 </div><br>
+	</div>
+		
+	<div class="PetKindDependent" id="Dog">
+			
+		
+	<div class="form-group">
+		<label>Fur</label><br>
+			<select id="Dog_Fur" name="Fur" class="CustomInput">
+				<option value="Black">Black</option>
+				<option value="Light brown">Light brown</option>
+				<option value="Brown">Brown</option>
+				<option value="Dark brown">Dark brown</option>
+				<option value="Grey">Grey</option>
+				<option value="Red">Red</option>
+				<option value="White">White</option>
+				<option value="Multiple">Multiple</option>
+				<option value="Others">Others</option>
+			</select>
+ 	 </div><br>
+	</div>
+		
+	<div class="PetKindDependent" id="Rabbit">
+			
+		
+	<div class="form-group">
+		<label>Fur</label><br>
+			<select id="Rabbit_Fur" name="Fur" class="CustomInput">
+				<option value="Black">Black</option>
+				<option value="Light brown">Light brown</option>
+				<option value="Brown">Brown</option>
+				<option value="Dark brown">Dark brown</option>
+				<option value="Grey">Grey</option>
+				<option value="White">White</option>
+				<option value="Multiple">Multiple</option>
+				<option value="Others">Others</option>
+			</select>
+ 	 </div><br>
+	</div>
+		
+	<div class="PetKindDependent" id="Others">
+			
+		
+		 <div class="form-group">
+			<label>Pet</label><br>
+				<textarea id="Pet" name="Pet" placeholder="Please enter what kind of pet you have found here" style="height:50px"></textarea>
+		</div><br>
+	</div>
 		
 		 <div class="form-group">
 			<label>Picture</label><br>
@@ -91,7 +158,7 @@
 	  </div><br>
 		
 		
-		<button type="button" class="btn btn-outline-success">Submit</button>
+		<button type="button" class="btn">Submit</button>
 		
 	</form>
 	
