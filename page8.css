@@ -8,7 +8,7 @@ p {
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 12px;
+	font-size: 16px;
 }
 .container {
 	width: 100%;
@@ -20,16 +20,21 @@ p {
 	
 }
 
-.CustomInput, #email, #date, #Picture, #location, #name, #Kind, #Description, #Pet {
+.CustomInput, #email, #date, #Picture, #location, #name, #Description, #Pet {
 	width: 80%;
-	background-color: #CCCCCC;
-	border: none;
-	color: #00163C;
+	color: #CCCCCC;
 	padding: 8px;
+	background-color: #393f4B;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
 	font-size: 12px;
+}
+
+#email, #date, #location, #name, #Description, #Pet {
+  border: none;
+  border-bottom: 2px solid white;
+
 }
 
 .PetKindDependent {
@@ -38,6 +43,15 @@ p {
 
 select {
 	height: 40px;
+	background-color: #CCDB40;
+	width: 80%;
+	padding: 8px;
+	font-family: neuzeit-grotesk, sans-serif;
+	font-style: normal;
+	font-weight: 300; 
+	font-size: 12px;
+	border: none; 
+	color: #393f4B;
 }
 
 body {
@@ -45,12 +59,11 @@ body {
 	color: white;
 
 }
-h2 {
+h1 {
 	text-transform: uppercase;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 20px;
 	color: #CCDB40;
 }
 
@@ -59,7 +72,7 @@ label {
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 12px;
+	font-size: 16px;
 	}
 
 .btn {
