@@ -16,6 +16,7 @@
 			$(chosenId).show();
         }
     </script>
+	<script src="Page3.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 </head>
 
@@ -29,7 +30,7 @@
 	<form action="first.php" method="get">
 	  <div class="form-group">
 		<label for="Location">Found at</label><br>
-		<input type="location" class="form-control form-control-lg" id="location" placeholder="Insert location here">
+		<input type="text" class="form-control form-control-lg" id="location" placeholder="Insert location here">
 	  </div><br>
 		
 		  <div class="form-group">
@@ -56,7 +57,7 @@
 			
 	<div class="form-group">
 		<label>Feathers</label><br>
-			<select id="Bird_Feathers" name="Feathers">
+			<select id="Bird_Feathers" class="color" name="Feathers">
 				<option value="Black">Black</option>
 				<option value="Blue">Blue</option>
 				<option value="Brown">Brown</option>
@@ -75,7 +76,7 @@
 			
 	<div class="form-group">
 		<label>Fur</label><br>
-			<select id="Cat_Fur" name="Fur">
+			<select id="Cat_Fur" class="color" name="Fur">
 				<option value="Black">Black</option>
 				<option value="Light brown">Light brown</option>
 				<option value="Brown">Brown</option>
@@ -94,7 +95,7 @@
 		
 	<div class="form-group">
 		<label>Fur</label><br>
-			<select id="Dog_Fur" name="Fur">
+			<select id="Dog_Fur" class="color" name="Fur">
 				<option value="Black">Black</option>
 				<option value="Light brown">Light brown</option>
 				<option value="Brown">Brown</option>
@@ -113,7 +114,7 @@
 		
 	<div class="form-group">
 		<label>Fur</label><br>
-			<select id="Rabbit_Fur" name="Fur">
+			<select id="Rabbit_Fur" class="color" name="Fur">
 				<option value="Black">Black</option>
 				<option value="Light brown">Light brown</option>
 				<option value="Brown">Brown</option>
@@ -137,7 +138,8 @@
 		
 		 <div class="form-group">
 			<label>Picture</label><br>
-			<input type="file" id="Picture" name="Picture" accept="image/*"><br>
+			<input type="file" id="Picture" name="Picture" accept="image/*" onchange="readURL(this);"><br>
+			 <img id="PicturePreview" alt="Preview">
 		</div><br>
 		
 		
@@ -158,7 +160,7 @@
 	  </div><br>
 		
 		
-		<button type="button" class="btn">Submit</button>
+		<button type="button" class="btn" onClick="RegisterPet();">Submit</button>
 		
 	</form>
 	
