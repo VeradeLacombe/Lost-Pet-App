@@ -75,10 +75,31 @@ Pet.unserialize = function (data) {
     return pet;
 }
 
+function SubmitPet() {
+	// If there is no foundPetList in localstorage
+	if (localStorage.foundPetList == undefined) {
+		// Then create a list, with the newly registerd pet
+		localStorage.foundPetList = JSON.stringify([localStorage.newRegisteredPet])
+	} 
+	// If there already is a foundPetList in localstorage
+	else {
+		// Retrieve that list
+		var foundPetList = JSON.parse(localStorage.foundPetList);
+		
+		// Add the newly registered pet to it
+		foundPetList.push(localStorage.newRegisteredPet);
+		
+		// And store the list in local storage again
+		localStorage.foundPetList = JSON.stringify(foundPetList);
+	}
+	
+	window.location.href = "4FoundPetList.html";
+}
+
 $(document).ready(function() {
 	var pet = Pet.unserialize(localStorage.newRegisteredPet);
 	console.log(pet);
-	document.getElementById("Picture").src = "data:image/png;base64," + pet.image;
+	document.getElementById("Picture").src = pet.image;
 	document.getElementById("name").innerHTML = pet.name;
 	document.getElementById("type").innerHTML = pet.type;
 	document.getElementById("description").innerHTML = pet.description;

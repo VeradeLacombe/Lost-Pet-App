@@ -92,11 +92,14 @@ function readURL(input)
 
 function getBase64Image(img) {
     var canvas = document.createElement("canvas");
+	var scale = Math.max(Math.round(img.width * img.height / 2000000), 1);
+	img.width = img.width / scale;
+	img.height = img.height / scale;
     canvas.width = img.width;
     canvas.height = img.height;
 
     var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
     var dataURL = canvas.toDataURL("image/png");
 
@@ -104,10 +107,10 @@ function getBase64Image(img) {
 }
 
 function RegisterPet() {
-	var image = getBase64Image(document.getElementById("PicturePreview"));
+	var image = "data:image/png;base64," + getBase64Image(document.getElementById("PicturePreview"));
 	var typeDropdown = document.getElementById("Kind");
-	var type = typeDropdown.options[typeDropdown.selectedIndex].label;
-	if (type == "🐾 Others") {
+	var type = typeDropdown.options[typeDropdown.selectedIndex].value;
+	if (type == "Others") {
 		type = document.getElementById("Pet").value;
 	}
 	var description = document.getElementById("Description").value;
@@ -126,7 +129,7 @@ function RegisterPet() {
 		}
 	}
 	
-	var newPet = new Pet(image, "petName2", type, description, email, date, location, color);
+	var newPet = new Pet(image, "Unknown", type, description, email, date, location, color);
 	localStorage.newRegisteredPet = newPet;
 	window.location.href = "page10.html";
 }
