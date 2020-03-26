@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 <title>mymap</title>
 	
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -13,16 +15,13 @@
   	crossorigin=""></script>
 	
 	<link href="Map style v1.css" rel="stylesheet">
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body >
 
-	<button class="home" onClick="window.location.href ='index.html';"><i class="fa fa-home"></i></button>
-	<div id="mapid" style="width: 600px; height: 400px;"></div>
+	<div id="mapid" style="width: 100"></div>
 		<script>
-			var mymap = L.map('mapid').setView([51.587, 4.80], 12.8);
+			var mymap = L.map('mapid').setView([51.588, 4.78], 12.8);
 			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 			maxZoom: 18,
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -30,34 +29,37 @@
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 			id: 'mapbox/streets-v11',
 			tileSize: 512,
-			zoomOffset: -1
-			}).addTo(mymap);
+			zoomOffset: -1})
+				.addTo(mymap);
 			
 			L.marker([51.597, 4.78])
 				.addTo(mymap)
-				.bindPopup("<b>Snoopy</b>").openPopup(onclick);
+				.bindPopup("<b>Snoopy</b>")
+				.openPopup(onclick);
 			
 			L.marker([51.587, 4.77])
 				.addTo(mymap)
-				.bindPopup("<b>Mini</b>").openPopup(onclick);
+				.bindPopup("<b>Mini</b>")
+				.openPopup(onclick);
 			
 			L.marker([51.599, 4.79])
 				.addTo(mymap)
-				.bindPopup("<b>Stuart</b>").openPopup(onclick);
+				.bindPopup("<b>Stuart</b>")
+				.openPopup(onclick);
 			
 			L.marker([51.587, 4.79])
 				.addTo(mymap)
-				.bindPopup("<b>Woody</b>").openPopup(onclick);	
+				.bindPopup("<b>Woody</b>")
+				.openPopup(onclick);	
 			
 			L.circle([51.597, 4.789], 75, {
-			color: 'red',
-			fillColor: '#f03',
-			fillOpacity: 0.5
-			}).addTo(mymap).bindPopup("I am a circle.");
+				color: 'red',
+				fillColor: '#f03',
+				fillOpacity: 0.5})
+				.addTo(mymap)
+				.bindPopup("Your location")
+				.openPopup(onclick);
 			
-			L.control.fuseSearch().addTo(mymap);
-			
-			mymap.addControl( new L.Control.Search(mobileOpts) );
 			
 		</script>
 </body>
