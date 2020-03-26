@@ -92,9 +92,8 @@ function readURL(input)
 
 function getBase64Image(img) {
     var canvas = document.createElement("canvas");
-	var scale = Math.max(Math.round(img.width * img.height / 2000000), 1);
+	var scale = Math.max(img.width * img.height / 300000, 1);
 	img.width = img.width / scale;
-	img.height = img.height / scale;
     canvas.width = img.width;
     canvas.height = img.height;
 
