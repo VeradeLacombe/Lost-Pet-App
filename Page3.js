@@ -107,11 +107,18 @@ function getBase64Image(img) {
 
 function RegisterPet() {
 	var image = "data:image/png;base64," + getBase64Image(document.getElementById("PicturePreview"));
+	
+	var name = document.getElementById("name").value;
+	if (name == "") {
+		name = "Unknown";
+	}
+	
 	var typeDropdown = document.getElementById("Kind");
 	var type = typeDropdown.options[typeDropdown.selectedIndex].value;
 	if (type == "Others") {
 		type = document.getElementById("Pet").value;
 	}
+	
 	var description = document.getElementById("Description").value;
 	var email = document.getElementById("email").value;
 	var date = document.getElementById("date").value;
@@ -119,16 +126,15 @@ function RegisterPet() {
 	
 	var colors = document.getElementsByClassName("color");
 	var color;
-	console.log(colors.length);
+	
 	for (var i = 0; i < colors.length; i++) {
-		console.log(colors[i].id);
 		if ($(colors[i]).is(":visible")) {
 			color = colors[i].value;
 			break;
 		}
 	}
 	
-	var newPet = new Pet(image, "Unknown", type, description, email, date, location, color);
+	var newPet = new Pet(image, name, type, description, email, date, location, color);
 	localStorage.newRegisteredPet = newPet;
 	window.location.href = "page10.html";
 }
