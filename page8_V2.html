@@ -15,6 +15,7 @@
 			$(chosenId).show();
         }
     </script>
+	<script src="Page3.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 </head>
 
@@ -27,27 +28,28 @@
 			<p>Please fill in the details as accurate as possible in order to help others find your lost pet.</p>
 			<br>
 		
-	<form>
+	<form action="first.php" method="get">
+		
 	  <div class="form-group">
 		<label for="name">Name</label><br>
-		<input type="name" class="form-control form-control-lg" id="name" placeholder="Enter your pet's name here">
+		<input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your pet's name here">
+	  </div><br>
+		
+	  <div class="form-group">
+		<label for="Location">Last Location</label><br>
+		<input type="text" class="form-control form-control-lg" id="location" placeholder="Insert location here">
 	  </div><br>
 		
 		  <div class="form-group">
-		<label for="date">Last seen</label><br>
+		<label for="date">Date</label><br>
 		<input type="date" placeholder="dd.mm.yyyy" class="form-control form-control-lg" id="date">
-	  </div><br>
-		
-		 <div class="form-group">
-		<label for="location">Last location</label><br>
-		<input type="location" placeholder="Enter last location here" class="form-control form-control-lg" id="location">
 	  </div><br>
 		
 		
 	<div class="form-group">
-	<label>Kind of Pet</label><br>
-		<select id="Kind" name="Kind of Pet" onchange="Optionselection (this)">
-			<option value="none">---</option>
+		<label>Kind of Pet</label><br>
+		<select id="Kind" name="Kind" onchange="Optionselection (this)">
+		<option value="none">---</option>
 			<option value="Bird" label="🦜 Bird">Bird</option>
 			<option value="Cat" label="🐈 Cat">Cat</option>
 			<option value="Dog" label="🦮 Dog">Dog</option>
@@ -55,13 +57,14 @@
 			<option value="Turtle" label="🐢 Turtle">Turtle</option>
 			<option value="Others" label="🐾 Others">Others</option>
 			</select>
- 	 </div><br>
 		
-	<div class="PetKindDependent" id="Bird">
+	</div><br>
+		
+		<div class="PetKindDependent" id="Bird">
 			
 	<div class="form-group">
 		<label>Feathers</label><br>
-			<select id="Bird_Feathers" name="Feathers">
+			<select id="Bird_Feathers" class="color" name="Feathers">
 				<option value="Black">Black</option>
 				<option value="Blue">Blue</option>
 				<option value="Brown">Brown</option>
@@ -76,11 +79,11 @@
  	 </div><br>
 	</div>
 		
-	<div class="PetKindDependent" id="Cat">
+			<div class="PetKindDependent" id="Cat">
 			
 	<div class="form-group">
 		<label>Fur</label><br>
-			<select id="Cat_Fur" name="Fur">
+			<select id="Cat_Fur" class="color" name="Fur">
 				<option value="Black">Black</option>
 				<option value="Light brown">Light brown</option>
 				<option value="Brown">Brown</option>
@@ -99,7 +102,7 @@
 		
 	<div class="form-group">
 		<label>Fur</label><br>
-			<select id="Dog_Fur" name="Fur">
+			<select id="Dog_Fur" class="color" name="Fur">
 				<option value="Black">Black</option>
 				<option value="Light brown">Light brown</option>
 				<option value="Brown">Brown</option>
@@ -118,7 +121,7 @@
 		
 	<div class="form-group">
 		<label>Fur</label><br>
-			<select id="Rabbit_Fur" name="Fur">
+			<select id="Rabbit_Fur" class="color" name="Fur">
 				<option value="Black">Black</option>
 				<option value="Light brown">Light brown</option>
 				<option value="Brown">Brown</option>
@@ -142,12 +145,14 @@
 		
 		 <div class="form-group">
 			<label>Picture</label><br>
-			<input type="file" id="Picture" name="Picture" accept="image/*"><br>
+			<input type="file" id="Picture" name="Picture" accept="image/*" onchange="readURL(this);"><br>
+			 <img id="PicturePreview" alt="Preview">
 		</div><br>
+		
 		
 		<div class="form-group">
 		<label>Comments</label><br>
-			<textarea id="Description" name="Description" placeholder="Please describe your pet..."></textarea>
+		<textarea id="Description" name="Description" placeholder="Please describe your pet..."></textarea>
 		</div><br>
 			
 		
@@ -162,8 +167,8 @@
 	  </div><br>
 		
 		
-		<button type="submit" class="btn">Submit</button>
-	
+		<button type="button" class="btn" onClick="RegisterPet('LostPetPreview.html');">Submit</button>
+		
 	</form>
 	
 	

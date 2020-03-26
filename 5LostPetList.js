@@ -1,12 +1,15 @@
 /* eslint-env es6 */
 
 class Pet {
-	constructor(image, name, type, description, email) {
+	constructor(image, name, type, description, email, date, location, color) {
 		this.image = image;
 		this.name = name;
 		this.type = type; 
 		this.description = description; 
-		this.email = email; 
+		this.email = email;
+		this.date = date;
+		this.location = location;
+		this.color = color;
 	}
 	
 	createPoster() {
@@ -41,15 +44,50 @@ class Pet {
 		poster.appendChild(typeContainer);
 		poster.appendChild(descriptionContainer);
 		
+		// Make poster clickable
+		poster.setAttribute("onclick", 'openPosterView("' + encodeURI(this.image) + '", "' + encodeURI(this.name) + '", "' + encodeURI(this.type) + '", "' + encodeURI(this.description) + '", "' + encodeURI(this.email) + '", "' + encodeURI(this.date) + '", "' + encodeURI(this.location) + '", "' + encodeURI(this.color) + '");');
+		
 		return poster; 
 	}
 }
 
+Pet.prototype.toString = function () {
+    return JSON.stringify({
+		"image": this.image,
+        "name": this.name,
+		"type": this.type,
+		"description": this.description,
+		"email": this.email,	
+		"date": this.date,
+		"location": this.location,
+		"color": this.color,
+    });
+};
+
+Pet.unserialize = function (data) {
+    data = JSON.parse(data);
+    var pet = new Pet;
+	pet.image = data.image;
+    pet.name = data.name;
+	pet.type = data.type;
+	pet.description = data.description;
+	pet.email = data.email;
+	pet.date = data.date;
+	pet.location = data.location;
+	pet.color = data.color;
+    return pet;
+}
+
+function openPosterView(image, name, type, description, email, date, location, color) {
+	localStorage.posterViewPet = new Pet(decodeURI(image), decodeURI(name), decodeURI(type), decodeURI(description), decodeURI(email), decodeURI(date), decodeURI(location), decodeURI(color));
+	window.location.href = "PosterViewLost.html";
+}
+
 const lostPets = [
-	new Pet("Pepper_cat.jpeg", "Pepper", "Cat", "A small cat with grey hair.", "email@email"),
-	new Pet("Bella_dog.webp", "Bella", "Dog", "It is a Golden Retriever. She has white fur.", "email@email"),
-	new Pet("Lucky_cat.jpeg", "Lucky", "Cat", "A small cat with brown hair.", "email@email"),
-	new Pet("Rebbel_cat.jpeg", "Cookies", "Cat", "A small cat with black hair and white socks and chest.", "email@email")
+	new Pet("Pepper_cat.jpeg", "Pepper", "Cat", "A small cat with grey hair.", "Vera@email", "23-03-2020", "Ulvenhout", "Grey"),
+	new Pet("Bella_dog.webp", "Bella", "Dog", "It is a Golden Retriever. She has white fur.", "Julia@email", "09-01-2020", "Breda", "White"),
+	new Pet("Lucky_cat.jpeg", "Lucky", "Cat", "A small cat with brown hair.", "LuckyCat@email", "25-10-2019", "Prinsenbeek", "Brown"),
+	new Pet("Rebbel_cat.jpeg", "Cookies", "Cat", "A chubby cat with orange hair and white socks and chest.", "mycat@email", "22-03-2020", "Rotterdam", "Orange")
 ]
 
 var nameFilter = "";
@@ -58,16 +96,31 @@ var typesFilter = [];
 function updatePosters() {
 	var lostPetsContainer = document.getElementById("lostPetsContainer");
 	lostPetsContainer.innerHTML = ''; // Clear container
-	for (var pet of lostPets) {
+	
+	// Retrieve the lostPetList from local storage
+	if (localStorage.lostPetList != undefined) {
+		var lostPetList = JSON.parse(localStorage.lostPetList);
 		
-		// Check if pet has the correct name
-		if (!(new RegExp(nameFilter)).test(pet.name)) continue;
+		for (var i = 0; i < lostPetList.length; i++) {
+			var pet = Pet.unserialize(lostPetList[i]);
+
+			displayPet(pet, lostPetsContainer);
+		}
+	}
+	
+	for (var j = 0; j < lostPets.length; j++) {
+		displayPet(lostPets[j], lostPetsContainer);
+	}		
+}
+
+function displayPet(pet, lostPetsContainer) {
+	// Check if pet has the correct name
+		if (!(new RegExp(nameFilter.toLowerCase())).test(pet.name.toLowerCase())) return;
 		
 		// Check if pet is of the correct type
-		if (typesFilter.length != 0 && !typesFilter.some(function(type) { return pet.type == type; })) continue;
+		if (typesFilter.length != 0 && !typesFilter.some(function(type) { return pet.type == type; })) return;
 		
 		lostPetsContainer.appendChild(pet.createPoster());
-	}
 }
 
 function togglePopup() {

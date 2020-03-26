@@ -118,3 +118,7 @@ float: left;
 .home:hover {
   background-color: #CCDB40;
 }
+
+#PicturePreview {
+	display: none;
+}
