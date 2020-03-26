@@ -85,7 +85,7 @@ function openPosterView(image, name, type, description, email, date, location, c
 
 const lostPets = [
 	new Pet("Pepper_cat.jpeg", "Pepper", "Cat", "A small cat with grey hair.", "Vera@email", "23-03-2020", "Ulvenhout", "Grey"),
-	new Pet("Bella_dog.webp", "Bella", "Dog", "It is a Golden Retriever. She has white fur.", "Julia@email", "09-01-2020", "Breda", "White"),
+	new Pet("Bella_dog.jpg", "Bella", "Dog", "It is a Golden Retriever. She has white fur.", "Julia@email", "09-01-2020", "Breda", "White"),
 	new Pet("Lucky_cat.jpeg", "Lucky", "Cat", "A small cat with brown hair.", "LuckyCat@email", "25-10-2019", "Prinsenbeek", "Brown"),
 	new Pet("Rebbel_cat.jpeg", "Cookies", "Cat", "A chubby cat with orange hair and white socks and chest.", "mycat@email", "22-03-2020", "Rotterdam", "Orange")
 ]
