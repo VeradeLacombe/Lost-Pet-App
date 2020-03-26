@@ -44,6 +44,9 @@ class Pet {
 		poster.appendChild(typeContainer);
 		poster.appendChild(descriptionContainer);
 		
+		// Make poster clickable
+		poster.setAttribute("onclick", 'openPosterView("' + encodeURI(this.image) + '", "' + encodeURI(this.name) + '", "' + encodeURI(this.type) + '", "' + encodeURI(this.description) + '", "' + encodeURI(this.email) + '", "' + encodeURI(this.date) + '", "' + encodeURI(this.location) + '", "' + encodeURI(this.color) + '");');
+		
 		return poster; 
 	}
 }
@@ -75,11 +78,16 @@ Pet.unserialize = function (data) {
     return pet;
 }
 
+function openPosterView(image, name, type, description, email, date, location, color) {
+	localStorage.posterViewPet = new Pet(decodeURI(image), decodeURI(name), decodeURI(type), decodeURI(description), decodeURI(email), decodeURI(date), decodeURI(location), decodeURI(color));
+	window.location.href = "PosterView.html";
+}
+
 const lostPets = [
-	new Pet("Labradoodle.jpg", "Coco", "Dog", "Choclate brown dog, labradoodle, she has a black collar", "email@email", "", "", ""),
-	new Pet("Husky.jpg", "Unknown", "Dog", "It's a husky, black and white fur, blue eyes, he/she has a collar without a name", "email@email", "", "", ""),
-	new Pet("Cat.jpg", "George", "Cat", "The cat has a red collar. It has redish fur and is a bit chubby", "email@email", "", "", ""),
-	new Pet("Cat_1.jpg", "Unknown", "Cat", "A small cat brown and black stripes. He was waiting in front of my door", "email@email", "", "", "")
+	new Pet("Labradoodle.jpg", "Coco", "Dog", "Choclate brown dog, labradoodle, she has a black collar", "email@email", "09-02-2020", "Breda", "Brown"),
+	new Pet("Husky.jpg", "Unknown", "Dog", "It's a husky, black and white fur, blue eyes, he/she has a collar without a name", "email@email", "30-12-2019", "Rotterdam", "White"),
+	new Pet("Cat.jpg", "George", "Cat", "The cat has a red collar. It has redish fur and is a bit chubby", "email@email", "26-03-2020", "Prinsenbeek", "Orange"),
+	new Pet("Cat_1.jpg", "Unknown", "Cat", "A small cat brown and black stripes. He was waiting in front of my door", "email@email", "07-11-2019", "Ulvenhout", "Brown")
 	]
 
 var nameFilter = "";
