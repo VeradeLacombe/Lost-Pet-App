@@ -6,6 +6,16 @@
 
 <link href="page8.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript"> 
+        function Optionselection(select) {
+			var chosen = select.options[select.selectedIndex]; 
+			var chosenId = "#" + chosen.value;
+			$(".PetKindDependent").not(chosenId).hide();
+			$(chosenId).show();
+        }
+    </script>
+	<script src="Page3.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 </head>
 
@@ -14,74 +24,135 @@
 	<button class="home" onClick="window.location.href ='index.html';"><i class="fa fa-home"></i></button>
 	
 <div class="container">
-		<h2>Register your lost pet</h2>
-			<p>Please fill in this form,<br>so that we can help you find your lost pet.</p>
+		<h1>Register your<br>lost pet</h1>
+			<p>Please fill in the details as accurate as possible in order to help others find your lost pet.</p>
 			<br>
 		
-	<form>
+	<form action="first.php" method="get">
+		
 	  <div class="form-group">
 		<label for="name">Name</label><br>
-		<input type="name" class="form-control form-control-lg" id="name" placeholder="Enter your pet's name here">
+		<input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your pet's name here">
+	  </div><br>
+		
+	  <div class="form-group">
+		<label for="Location">Last Location</label><br>
+		<input type="text" class="form-control form-control-lg" id="location" placeholder="Insert location here">
 	  </div><br>
 		
 		  <div class="form-group">
-		<label for="date">Last seen</label><br>
+		<label for="date">Date</label><br>
 		<input type="date" placeholder="dd.mm.yyyy" class="form-control form-control-lg" id="date">
-	  </div><br>
-		
-		 <div class="form-group">
-		<label for="location">Last location</label><br>
-		<input type="location" placeholder="Enter last location here" class="form-control form-control-lg" id="location">
 	  </div><br>
 		
 		
 	<div class="form-group">
 		<label>Kind of Pet</label><br>
-			<select id="Kind" name="Kind of Pet">
-				<option value="Bird">Bird</option>
-				<option value="Cat">Cat</option>
-				<option value="Dog">Dog</option>
-				<option value="Guinea Pig">Guinea Pig</option>
-				<option value="Rabbit">Rabbit</option>
-				<option value="Turtle">Turtle</option>
-				<option value="Others">Others</option>
+		<select id="Kind" name="Kind" onchange="Optionselection (this)">
+		<option value="none">---</option>
+			<option value="Bird" label="🦜 Bird">Bird</option>
+			<option value="Cat" label="🐈 Cat">Cat</option>
+			<option value="Dog" label="🦮 Dog">Dog</option>
+			<option value="Rabbit" label="🐇 Rabbit">Rabbit</option>
+			<option value="Turtle" label="🐢 Turtle">Turtle</option>
+			<option value="Others" label="🐾 Others">Others</option>
 			</select>
- 	 </div><br>
 		
-		<div class="form-group">
-		<label>Size</label><br>
-			<select id="Size" name="Size">
-				<option value="Small">Small</option>
-				<option value="Medium">Medium</option>
-				<option value="Large">Large</option>
-			</select>
- 	 </div><br>
+	</div><br>
 		
-			<div class="form-group">
-		<label>Color</label><br>
-			<select id="Fur" name="Fur">
-				<option value="Small">Light brown</option>
-				<option value="Medium">Brown</option>
-				<option value="Large">Dark brown</option>
-				<option value="Small">Black</option>
-				<option value="Medium">Grey</option>
-				<option value="Medium">Green</option>
-				<option value="Medium">Yellow</option>
-				<option value="Medium">Red</option>
-				<option value="Large">White</option>
+		<div class="PetKindDependent" id="Bird">
+			
+	<div class="form-group">
+		<label>Feathers</label><br>
+			<select id="Bird_Feathers" class="color" name="Feathers">
+				<option value="Black">Black</option>
+				<option value="Blue">Blue</option>
+				<option value="Brown">Brown</option>
+				<option value="Green">Green</option>
+				<option value="Grey">Grey</option>
+				<option value="Red">Red</option>
+				<option value="Yellow">Yellow</option>
+				<option value="White">White</option>
 				<option value="Medium">Multiple</option>
 				<option value="Medium">Others</option>
 			</select>
  	 </div><br>
+	</div>
+		
+			<div class="PetKindDependent" id="Cat">
+			
+	<div class="form-group">
+		<label>Fur</label><br>
+			<select id="Cat_Fur" class="color" name="Fur">
+				<option value="Black">Black</option>
+				<option value="Light brown">Light brown</option>
+				<option value="Brown">Brown</option>
+				<option value="Dark brown">Dark brown</option>
+				<option value="Grey">Grey</option>
+				<option value="Red">Red</option>
+				<option value="White">White</option>
+				<option value="Multiple">Multiple</option>
+				<option value="Others">Others</option>
+			</select>
+ 	 </div><br>
+	</div>
+		
+	<div class="PetKindDependent" id="Dog">
+			
+		
+	<div class="form-group">
+		<label>Fur</label><br>
+			<select id="Dog_Fur" class="color" name="Fur">
+				<option value="Black">Black</option>
+				<option value="Light brown">Light brown</option>
+				<option value="Brown">Brown</option>
+				<option value="Dark brown">Dark brown</option>
+				<option value="Grey">Grey</option>
+				<option value="Red">Red</option>
+				<option value="White">White</option>
+				<option value="Multiple">Multiple</option>
+				<option value="Others">Others</option>
+			</select>
+ 	 </div><br>
+	</div>
+		
+	<div class="PetKindDependent" id="Rabbit">
+			
+		
+	<div class="form-group">
+		<label>Fur</label><br>
+			<select id="Rabbit_Fur" class="color" name="Fur">
+				<option value="Black">Black</option>
+				<option value="Light brown">Light brown</option>
+				<option value="Brown">Brown</option>
+				<option value="Dark brown">Dark brown</option>
+				<option value="Grey">Grey</option>
+				<option value="White">White</option>
+				<option value="Multiple">Multiple</option>
+				<option value="Others">Others</option>
+			</select>
+ 	 </div><br>
+	</div>
+		
+	<div class="PetKindDependent" id="Others">
+			
+		
+		 <div class="form-group">
+			<label>Pet</label><br>
+				<textarea id="Pet" name="Pet" placeholder="Please enter what kind of pet you have lost here"></textarea>
+		</div><br>
+	</div>
 		
 		 <div class="form-group">
 			<label>Picture</label><br>
-			<input type="file" id="Picture" name="Picture" accept="image/*"><br>
+			<input type="file" id="Picture" name="Picture" accept="image/*" onchange="readURL(this);"><br>
+			 <img id="PicturePreview" alt="Preview">
 		</div><br>
+		
 		
 		<div class="form-group">
 		<label>Comments</label><br>
-			<textarea id="Description" name="Description" placeholder="Please describe your pet..." style="height:100px"></textarea>
+		<textarea id="Description" name="Description" placeholder="Please describe your pet..."></textarea>
 		</div><br>
 			
 		
@@ -96,8 +167,8 @@
 	  </div><br>
 		
 		
-		<button type="submit" class="btn btn-primary"><a href="page10.html">Submit</a></button>
-	
+		<button type="button" class="btn" onClick="RegisterPet('LostPetPreview.html');">Submit</button>
+		
 	</form>
 	
 	

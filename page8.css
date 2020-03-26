@@ -8,11 +8,11 @@ p {
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 12px;
+	font-size: 16px;
 }
 .container {
-	width: 60%;
-	padding: 16px; 
+	width: 100%;
+	padding: 25px; 
 	font-family: neuzeit-grotesk, sans-serif;
 	display: flex; 
 	flex-direction: column;
@@ -20,16 +20,38 @@ p {
 	
 }
 
-#email, #date, #Picture, #location, #name, #Kind, #Description, #Size, #Fur{
+.CustomInput, #email, #date, #Picture, #location, #name, #Description, #Pet {
 	width: 80%;
-	background-color: #CCCCCC;
-	border: none;
-	color: #00163C;
+	color: #CCCCCC;
+	padding: 8px;
+	background-color: #393f4B;
+	font-family: neuzeit-grotesk, sans-serif;
+	font-style: normal;
+	font-weight: 300; 
+	font-size: 12px;
+}
+
+#email, #date, #location, #name, #Description, #Pet {
+  border: none;
+  border-bottom: 2px solid white;
+
+}
+
+.PetKindDependent {
+	display: none;
+}
+
+select {
+	height: 40px;
+	background-color: #CCDB40;
+	width: 80%;
 	padding: 8px;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
 	font-size: 12px;
+	border: none; 
+	color: #393f4B;
 }
 
 body {
@@ -37,12 +59,11 @@ body {
 	color: white;
 
 }
-h2 {
+h1 {
 	text-transform: uppercase;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 20px;
 	color: #CCDB40;
 }
 
@@ -51,10 +72,11 @@ label {
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 12px;
+	font-size: 16px;
 	}
 
 .btn {
+	text-decoration: none;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -73,6 +95,7 @@ label {
 .btn:hover{
 	opacity: 1;
 	background-color: #CCDB40;
+	text-decoration: none;
 }
 
 .home {
@@ -93,4 +116,8 @@ float: left;
 /* Darker background on mouse-over */
 .home:hover {
   background-color: #CCDB40;
+}
+
+#PicturePreview {
+	display: none;
 }

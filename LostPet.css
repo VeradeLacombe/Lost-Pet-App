@@ -9,11 +9,11 @@ p {
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 12px;
+	font-size: 16px;
 }
 
 .container {
-	width: 60%;
+	width: 80%;
 	padding: 16px; 
 	font-family: neuzeit-grotesk, sans-serif;
 	display: flex; 
@@ -21,28 +21,50 @@ p {
 	justify-content: center;
 }
 
-#email, #date, #Picture, #location, #Kind, #Description, #Fur, #Size{
+.CustomInput, #email, #date, #Picture, #location, #name, #Description, #Pet {
 	width: 80%;
-	background-color: #CCCCCC;
-	border: none;
-	color: #00163C;
+	color: #CCCCCC;
 	padding: 8px;
+	background-color: #393f4B;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
 	font-size: 12px;
 }
 
+#email, #date, #location, #name, #Description, #Pet {
+  border: none;
+  border-bottom: 2px solid white;
+
+}
+
+.PetKindDependent {
+	display: none;
+}
+
+select {
+	height: 40px;
+	background-color: #CCDB40;
+	width: 80%;
+	padding: 8px;
+	font-family: neuzeit-grotesk, sans-serif;
+	font-style: normal;
+	font-weight: 300; 
+	font-size: 12px;
+	border: none; 
+	color: #393f4B;
+}
+
 body {
 	background: #393f4B;
-	color:white;
+	color: white;
+
 }
-h2 {
+h1 {
 	text-transform: uppercase;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 20px;
 	color: #CCDB40;
 }
 
@@ -51,10 +73,11 @@ label {
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
 	font-weight: 300; 
-	font-size: 12px;
+	font-size: 16px;
 	}
 
 .btn {
+	text-decoration: none;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -73,6 +96,7 @@ label {
 .btn:hover{
 	opacity: 1;
 	background-color: #CCDB40;
+	text-decoration: none;
 }
 
 .home {
@@ -95,3 +119,6 @@ float: left;
   background-color: #CCDB40;
 }
 
+#PicturePreview {
+	display: none;
+}
