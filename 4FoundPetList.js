@@ -115,7 +115,7 @@ function updatePosters() {
 
 function displayPet(pet, lostPetsContainer) {
 	// Check if pet has the correct name
-		if (!(new RegExp(nameFilter)).test(pet.name)) return;
+		if (!(new RegExp(nameFilter.toLowerCase())).test(pet.name.toLowerCase())) return;
 		
 		// Check if pet is of the correct type
 		if (typesFilter.length != 0 && !typesFilter.some(function(type) { return pet.type == type; })) return;

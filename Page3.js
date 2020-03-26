@@ -105,7 +105,7 @@ function getBase64Image(img) {
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
-function RegisterPet() {
+function RegisterPet(nextPage) {
 	var image = "data:image/png;base64," + getBase64Image(document.getElementById("PicturePreview"));
 	
 	var name = document.getElementById("name").value;
@@ -136,5 +136,5 @@ function RegisterPet() {
 	
 	var newPet = new Pet(image, name, type, description, email, date, location, color);
 	localStorage.newRegisteredPet = newPet;
-	window.location.href = "page10.html";
+	window.location.href = nextPage;
 }
