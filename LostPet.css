@@ -10,6 +10,7 @@ p {
 	font-style: normal;
 	font-weight: 300; 
 	font-size: 16px;
+	color:#F5F5F5;
 }
 
 .container {
@@ -28,7 +29,7 @@ p {
 	background-color: #393f4B;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
-	font-weight: 300; 
+	font-weight: 500; 
 	font-size: 12px;
 }
 
@@ -49,7 +50,7 @@ select {
 	padding: 8px;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
-	font-weight: 300; 
+	font-weight: 500; 
 	font-size: 12px;
 	border: none; 
 	color: #393f4B;
@@ -64,7 +65,7 @@ h1 {
 	text-transform: uppercase;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
-	font-weight: 300; 
+	font-weight: 500; 
 	color: #CCDB40;
 }
 
@@ -72,7 +73,7 @@ label {
 	text-transform: uppercase;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
-	font-weight: 300; 
+	font-weight: 500; 
 	font-size: 16px;
 	}
 
@@ -84,13 +85,13 @@ label {
 	margin-top: 20%;
 	width: 200px;
 	height: 50px;
-	border-radius: 12px;
+	border-radius: 6px;
 	border: none;
 	background-color: #CCDB40 ;
 	color: #393f4B;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
-	font-weight: 300; 
+	font-weight: 500; 
 	font-size: 16px;
 }
 .btn:hover{
