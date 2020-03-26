@@ -80,7 +80,7 @@ Pet.unserialize = function (data) {
 
 function openPosterView(image, name, type, description, email, date, location, color) {
 	localStorage.posterViewPet = new Pet(decodeURI(image), decodeURI(name), decodeURI(type), decodeURI(description), decodeURI(email), decodeURI(date), decodeURI(location), decodeURI(color));
-	window.location.href = "PosterView.html";
+	window.location.href = "PosterViewLost.html";
 }
 
 const lostPets = [
