@@ -10,9 +10,18 @@ body {
 	color: #CCDB40;
 	font-family: neuzeit-grotesk, sans-serif;
 	font-style: normal;
-	font-weight: 300; 
+	font-weight: 500; 
+	text-transform: uppercase;
 }
 
+.h4 {
+	text-align: center; 
+	color:#F5F5F5;
+	font-family: neuzeit-grotesk, sans-serif;
+	font-style: normal;
+	font-weight: 500; 
+	font-size: 20px;
+}
 .home {
   background-color:#000000; /* Blue background */
   border: none; /* Remove borders */
